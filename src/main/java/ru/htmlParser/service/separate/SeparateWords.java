@@ -7,7 +7,9 @@ import ru.htmlParser.service.converter.WordsFromHtmlFile;
 
 import java.util.List;
 
-/**Данный класс разбивает строки на слова по заранее известному разделителю.*/
+/**
+ * Данный класс разбивает строки на слова по заранее известному разделителю.
+ */
 @Component
 @RequiredArgsConstructor
 public class SeparateWords {

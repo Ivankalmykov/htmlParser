@@ -8,8 +8,9 @@ import ru.htmlParser.service.separate.SeparateWords;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/**Данный класс считает количетво повторений того или иного слова на HTML странице*/
-
+/**
+ * Данный класс считает количетво повторений того или иного слова на HTML странице
+ */
 @Component
 @RequiredArgsConstructor
 public class Counter {

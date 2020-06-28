@@ -8,8 +8,9 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-/**Данный класс получает элементы HTML построчно и добавляет их в List*/
-
+/**
+ * Данный класс получает элементы HTML построчно и добавляет их в List
+ */
 @Component
 public class WordsFromHtmlFile {
     public List<String> pickWordFromHtmlFile(Document document) {

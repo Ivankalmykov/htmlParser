@@ -7,29 +7,21 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 
-/**Класс является обработчиком ошибок. При той или иной ошибке возвращается соотвествующее сообщение.*/
+/**
+ * Класс является обработчиком ошибок. При той или иной ошибке возвращается соотвествующее сообщение.
+ */
 @Slf4j
 @ControllerAdvice
 public class ControllerExceptionHandler {
 
-    private static final String NOT_ENOUGH_RAM = "Недостаточно памяти для загрузки";
     private static final String INTERNAL_SERVER_ERROR_MESSAGE = "Внутренняя ошибка сервиса, проверьте корректность входных данных";
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Object> handleException(Exception ex, WebRequest request) {
-
-        if (ex instanceof NotEnoughRamException) {
-            log.error(ex.getMessage(), ex);
-            return ResponseEntity
-                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(NOT_ENOUGH_RAM);
-
-        } else {
-            log.error(ex.getMessage(), ex);
-            return ResponseEntity
-                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(INTERNAL_SERVER_ERROR_MESSAGE);
-        }
+        log.error(ex.getMessage(), ex);
+        return ResponseEntity
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(INTERNAL_SERVER_ERROR_MESSAGE);
     }
 
 }
